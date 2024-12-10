@@ -14,16 +14,17 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export function UserNav() {
-  const router = useRouter()
   const { user, logout } = useAuth()
-
-  const handleLogin = () => {
-    router.push('/auth/login')
-  }
+  const router = useRouter()
 
   if (!user) {
     return (
-      <Button variant="outline" onClick={handleLogin}>
+      <Button 
+        variant="outline" 
+        onClick={() => {
+          router.push('/auth/login')
+        }}
+      >
         Login
       </Button>
     )
