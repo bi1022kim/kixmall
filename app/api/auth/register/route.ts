@@ -2,9 +2,15 @@ import { NextResponse } from 'next/server'
 import { hash } from 'bcryptjs'
 import { prisma } from '@/lib/prisma'
 
+interface RegisterData {
+  email: string;
+  password: string;
+  name: string;
+}
+
 export async function POST(req: Request) {
   try {
-    const { email, password, name } = await req.json()
+    const { email, password, name }: RegisterData = await req.json()
     
     // 이메일 중복 체크
     const existingUser = await prisma.user.findUnique({
