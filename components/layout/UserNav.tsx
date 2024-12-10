@@ -14,8 +14,8 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export function UserNav() {
-  const { user, logout } = useAuth()
   const router = useRouter()
+  const { user, logout } = useAuth()
 
   const handleLogin = () => {
     router.push('/auth/login')
