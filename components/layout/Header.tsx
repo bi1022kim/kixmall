@@ -2,7 +2,7 @@
 
 import { Store } from 'lucide-react';
 import Link from 'next/link';
-import { AuthButtons } from '@/components/auth/AuthButtons';
+import { UserNav } from './UserNav';
 
 export function Header() {
   return (
@@ -12,7 +12,7 @@ export function Header() {
           <Store className="h-6 w-6" />
           <span className="text-xl font-bold">B2B Mall</span>
         </Link>
-        <AuthButtons />
+        <UserNav />
       </div>
     </header>
   );
