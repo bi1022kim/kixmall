@@ -17,21 +17,21 @@ export function UserNav() {
   const { user, logout } = useAuth()
   const router = useRouter()
 
-  const navigateToLogin = () => {
+  const handleLogin = () => {
     router.push('/auth/login')
-  }
-
-  if (!user) {
-    return (
-      <Button variant="outline" onClick={navigateToLogin}>
-        Login
-      </Button>
-    )
   }
 
   const handleLogout = () => {
     logout()
     router.push('/auth/login')
+  }
+
+  if (!user) {
+    return (
+      <Button variant="outline" onClick={handleLogin}>
+        Login
+      </Button>
+    )
   }
 
   return (
