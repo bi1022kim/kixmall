@@ -39,6 +39,7 @@ export async function POST(req: Request) {
       { status: 201 }
     )
   } catch (error) {
+    console.error('회원가입 에러:', error);
     return NextResponse.json(
       { error: '회원가입 중 오류가 발생했습니다.' },
       { status: 500 }

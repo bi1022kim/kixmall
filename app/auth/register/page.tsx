@@ -33,6 +33,7 @@ export default function RegisterPage() {
         alert('회원가입이 완료되었습니다.')
         router.push('/auth/login')
       } else {
+        console.error('에러 응답:', data)
         alert(data.error)
       }
     } catch (error) {
