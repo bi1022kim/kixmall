@@ -2,7 +2,7 @@
 
 import { Store } from 'lucide-react';
 import Link from 'next/link';
-import { UserNav } from './UserNav';
+import { UserNav } from '@/components/layout/UserNav';
 
 export function Header() {
   return (
