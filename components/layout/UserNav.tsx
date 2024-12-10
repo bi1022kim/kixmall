@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/contexts/AuthContext'
 import {
   DropdownMenu,
@@ -13,11 +14,16 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export function UserNav() {
+  const router = useRouter()
   const { user, logout } = useAuth()
+
+  const handleLogin = () => {
+    router.push('/auth/login')
+  }
 
   if (!user) {
     return (
-      <Button variant="outline" onClick={() => router.push('/auth/login')}>
+      <Button variant="outline" onClick={handleLogin}>
         Login
       </Button>
     )
