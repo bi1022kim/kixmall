@@ -1,10 +1,10 @@
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="container mx-auto flex h-[calc(100vh-4rem)] items-center justify-center">
       <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Product Not Found</h2>
+        <h2 className="text-2xl font-bold">Page Not Found</h2>
         <p className="text-muted-foreground">
-          The product you're looking for doesn't exist or has been removed.
+          We couldn&apos;t find the page you&apos;re looking for.
         </p>
       </div>
     </div>
