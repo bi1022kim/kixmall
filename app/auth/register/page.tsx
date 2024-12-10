@@ -54,11 +54,7 @@ export default function RegisterPage() {
             <Label htmlFor="email">Email</Label>
             <Input
               id="email"
-              placeholder="m@example.com"
               type="email"
-              autoCapitalize="none"
-              autoComplete="email"
-              autoCorrect="off"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -90,10 +86,7 @@ export default function RegisterPage() {
         </form>
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{' '}
-          <Link
-            href="/auth/login"
-            className="font-medium hover:text-foreground"
-          >
+          <Link href="/auth/login" className="font-medium hover:text-foreground">
             Sign in
           </Link>
         </p>

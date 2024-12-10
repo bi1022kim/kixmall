@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
-export function UserNav() {
+export function UserNav() {0
   const router = useRouter()
   const { user, logout } = useAuth()
 
