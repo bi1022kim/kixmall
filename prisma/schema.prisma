@@ -16,7 +16,7 @@ model User {
   updatedAt     DateTime  @updatedAt
 }
 
-model Product {
+model product {
   id          String   @id @default(cuid())
   name        String
   description String?
