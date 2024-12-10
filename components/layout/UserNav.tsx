@@ -14,19 +14,24 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 export function UserNav() {
-  const router = useRouter()
   const { user, logout } = useAuth()
+  const router = useRouter()
 
-  const handleLoginClick = () => {
+  const handleLogin = () => {
     router.push('/auth/login')
   }
 
   if (!user) {
     return (
-      <Button variant="outline" onClick={handleLoginClick}>
+      <Button variant="outline" onClick={handleLogin}>
         Login
       </Button>
     )
+  }
+
+  const handleLogout = () => {
+    logout()
+    router.push('/auth/login')
   }
 
   return (
@@ -49,12 +54,12 @@ export function UserNav() {
             </div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={logout}>
+          <DropdownMenuItem onClick={handleLogout}>
             Log out
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <Button variant="outline" onClick={logout}>
+      <Button variant="outline" onClick={handleLogout}>
         Logout
       </Button>
     </div>
