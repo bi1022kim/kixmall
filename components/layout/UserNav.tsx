@@ -13,17 +13,17 @@ import {
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
-export function UserNav() {0
-  const router = useRouter()
+export function UserNav() {
   const { user, logout } = useAuth()
+  const router = useRouter()
 
-  const handleLogin = () => {
+  const navigateToLogin = () => {
     router.push('/auth/login')
   }
 
   if (!user) {
     return (
-      <Button variant="outline" onClick={handleLogin}>
+      <Button variant="outline" onClick={navigateToLogin}>
         Login
       </Button>
     )
